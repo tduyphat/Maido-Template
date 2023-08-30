@@ -53,3 +53,64 @@ i {
   opacity: 1;
 }
 
+.pinned-article {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  justify-content: space-between;
+}
+
+.pinned-badge {
+  font-size: 0.8em;
+  width: fit-content;
+  background-color: white;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.article-text {
+  color: white;
+}
+
+.pinned-article:first-child {
+  background-color: purple;
+  grid-area: first;
+}
+
+.pinned-article:nth-child(2) {
+  background-color: red;
+  grid-area: second;
+}
+
+.pinned-article:nth-child(3) {
+  background-color: green;
+  grid-area: third;
+}
+
+.pinned-article:nth-child(4) {
+  background-color: blue;
+  grid-area: fourth;
+}
+
+.pinned-article:last-child {
+  background-color: pink;
+  grid-area: fifth;
+}
+
+.pinned-article p + h2 {
+  color: white;
+}
+
+.pinned-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 0.5em 0.5em;
+  grid-template-areas:
+    "first second third"
+    "first fourth fifth"
+}
+
