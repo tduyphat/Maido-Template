@@ -1,4 +1,7 @@
+@import 'typed';
+
 body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: large;
   margin: 30px 150px 30px 150px;
   background-color: rgb(36, 36, 65);
@@ -57,6 +60,10 @@ i {
   flex-direction: column;
   padding: 1.5em;
   justify-content: space-between;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-10px);
+  }
   &:first-child {
     background-color: purple;
     grid-area: first;
@@ -127,11 +134,13 @@ i {
       background-color: orange;
     }
   }
+  &:hover .article-content {
+    transform: scale(1.03);
+  }
 }
 
 .article-content {
-  grid-template-columns: 50% 50%;
-
+  transition: transform 0.5s ease;
 }
 
 .badge-container {
@@ -197,7 +206,6 @@ i {
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   & form {
     display: flex;
@@ -236,34 +244,73 @@ input {
   }
 }
 
-.typing-text-container {
-  display: inline-block;
-  overflow: hidden;
-  border-right: 0.15em solid #333;
-  white-space: nowrap;
-}
-
-.typing-text {
-  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
+.input-wrapper {
+  display: block;
+  > input,
+  > .placeholder {
+    display: block;
+    appearance: none;
     width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+  }
+  > .placeholder {
+    pointer-events: none;
+    @include typed(
+      "Start you day with Maido",
+      1.5,
+      (
+        caret-width: 2px,
+        caret-space: 2px
+      )
+    );
+  }
+  > input {
+    &:focus,
+    &:active {
+      + .placeholder {
+        display: none;
+      }
+    }
   }
 }
 
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #333;
+footer {
+  padding-top: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-icons {
+  font-size: 3px;
+  justify-content: space-between;
+  & a {
+    margin: 10px;
+    & i {
+      transition: color 0.3s;
+      &:hover {
+        color: orange;
+      }
+    }
   }
 }
+
+.footer-nav {
+  font-size: medium;
+  display: flex;
+  justify-content: flex-start;
+  width: 43%;
+}
+
+.disclaimer {
+  font-size: xx-small;
+  color: white;
+}
+
+
+
 
 
 
