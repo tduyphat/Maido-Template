@@ -14,7 +14,7 @@ This project was created as a mock-up version to [this page](https://preview.the
 ## Technologies
 
 - HTML5
-- SCSS
+- SASS
 
 ## Project Structure
 ````
