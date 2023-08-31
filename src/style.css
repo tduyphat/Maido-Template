@@ -1,0 +1,261 @@
+body {
+  font-size: large;
+  margin: 30px 150px 30px 150px;
+  background-color: rgb(36, 36, 65);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+i {
+  color: white;
+  font-size: 10em;
+}
+
+.logo {
+  font-size: 3em;
+}
+
+.nav-link {
+  position: relative;
+  padding: 10px;
+}
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background-color: grey;
+  border-radius: 50%;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+.nav-link:hover::before {
+  opacity: 1;
+}
+
+.pinned-article {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  justify-content: space-between;
+}
+.pinned-article:first-child {
+  background-color: purple;
+  grid-area: first;
+}
+.pinned-article:nth-child(2) {
+  background-color: red;
+  grid-area: second;
+}
+.pinned-article:nth-child(3) {
+  background-color: green;
+  grid-area: third;
+}
+.pinned-article:nth-child(4) {
+  background-color: blue;
+  grid-area: fourth;
+}
+.pinned-article:last-child {
+  background-color: pink;
+  grid-area: fifth;
+}
+.pinned-article p + h2 {
+  color: white;
+}
+
+.pinned-badge {
+  margin-right: 10px;
+  font-size: 0.8em;
+  width: fit-content;
+  background-color: white;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.article-text {
+  color: white;
+}
+
+.pinned-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 0.8em 0.8em;
+  grid-template-areas: "first second third" "first fourth fifth";
+}
+
+.big-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 5em;
+  padding-left: 5em;
+  padding-right: 5em;
+  height: 400px;
+  width: auto;
+  margin: 30px 100px 30px 100px;
+  border-radius: 15px;
+  background-color: black;
+}
+.big-article .pinned-badge {
+  transition: background-color 0.3s;
+}
+.big-article .pinned-badge:hover {
+  background-color: orange;
+}
+
+.article-content {
+  grid-template-columns: 50% 50%;
+}
+
+.badge-container {
+  display: flex;
+  width: auto;
+}
+
+.earlier-section-title {
+  color: white;
+  text-align: center;
+}
+
+.earlier-section {
+  margin-left: 100px;
+  margin-right: 100px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 0.8em 0.8em;
+}
+.earlier-section .big-article {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: 0;
+}
+.earlier-section .big-article:first-child {
+  grid-column: auto/span 3;
+}
+.earlier-section .big-article:nth-child(2) {
+  grid-column: auto/span 3;
+}
+.earlier-section .big-article:nth-child(3) {
+  grid-column: auto/span 2;
+}
+.earlier-section .big-article:nth-child(4) {
+  grid-column: auto/span 2;
+}
+.earlier-section .big-article:last-child {
+  grid-column: auto/span 2;
+}
+
+.load-more-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.load-more-button {
+  color: white;
+  font-weight: bold;
+  margin: 1.5em;
+  padding: 2em;
+  border-radius: 15px;
+  width: 70em;
+  background-color: grey;
+  transition: background-color 0.3s;
+}
+.load-more-button:hover {
+  background-color: orange;
+}
+
+.subscribe-form {
+  font-size: 1.5em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.subscribe-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-button {
+  color: white;
+  font-weight: bold;
+  margin: 1.5em;
+  padding: 2em;
+  border-radius: 15px;
+  width: 10em;
+  background-color: grey;
+  transition: background-color 0.3s;
+}
+.submit-button:hover {
+  background-color: orange;
+}
+
+input {
+  font-size: large;
+  text-align: center;
+  color: white;
+  border: none;
+  border-bottom: 2px solid white;
+  outline: none;
+  background-color: transparent;
+  height: 50px;
+  width: 600px;
+}
+input::placeholder {
+  color: grey;
+  font-weight: bold;
+}
+
+.typing-text-container {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid #333;
+  white-space: nowrap;
+}
+
+.typing-text {
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
