@@ -1,19 +1,51 @@
 # Responsive design
 
-Refer to this [link](https://preview.themeforest.net/item/maido-multipurpose-ghost-blog-theme/full_screen_preview/24837109?_ga=2.259990478.570486835.1654146705-2133876429.1654146705)(see 'Dark version') and create a similar webpage
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
-## Requirements
+This project was created as a mock-up version to [this page](https://preview.themeforest.net/item/maido-multipurpose-ghost-blog-theme/full_screen_preview/24837109?_ga=2.259990478.570486835.1654146705-2133876429.1654146705). Several techniques like Flex Box and Grid were utilized in the coding process.
 
-1. Position the HTML elements using Flexbox and Grid system
-2. Implement basic animations as shown in the webpage (hover effect,
-active link styles, typing effect). You can modify the outlook of the effects
-3. Deploy your web page, using the platform of your choice (For example, Github Pages).
-4. This assignment requires the implementation of SASS.
-5. Rewrite README file with good structure. Add unnecessary files and folders to `.gitignore`
+## Table of content
 
-This assignment only requires 1 static page. No JavaScript needed.
-Font family and text content can be modified as your preferences.
-The web page does not need to be fully responsive, but at least you should
-have responsive scaling for Flexbox and Grid system.
+1. [Technologies](#technologies)
+2. [Project Structure](#project-structure)
+3. [Getting Started](#getting-started)
+
+## Technologies
+
+- HTML5
+- SCSS
+
+## Project Structure
+````
+├── styles
+|   ├──styles.scss
+|   └──typed.scss
+├── index.html
+├── style.css
+├── style.css.map
+├──image.png
+├──package.json
+└──README.md
+
+````
+
+## Getting Started
+
+1. Open your terminal and clone the repository with the following command: 
+```
+git clone https://github.com/tduyphat/fs16_2-responsive-design
+```
+
+2. Open the "index.html" file in Visual Studio Code and click on "Go Live" to open the web page (see the image below).
+
+![IMG1](image.png)
+
+3. Or simply access the web page through the deployed version on Netlify: https://phat-tran-maido.netlify.app/
+
+
+
+
+
 
 
